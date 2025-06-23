@@ -42,7 +42,7 @@ Objective: Build the public-facing, visually stunning marketing website.
 
 Notes: This phase focuses purely on the frontend and requires no authentication. The goal is to create a beautiful and convincing storefront for the service.
 
-[ ] P1-T1: Create the main layout file (/app/layout.tsx) with a shared Navbar and Footer component structure.
+[x] P1-T1: Create the main layout file (/app/layout.tsx) with a shared Navbar and Footer component structure.
 
 Notes from Cursor:
 
