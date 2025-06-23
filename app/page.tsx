@@ -2,27 +2,27 @@ import React from 'react';
 
 // I'm using inline SVGs for icons to keep this self-contained.
 // In your actual project, you would import these from 'lucide-react'.
-const BotIcon = (props) => (
+const BotIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" />
   </svg>
 );
-const ShieldCheckIcon = (props) => (
+const ShieldCheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
   </svg>
 );
-const ZapIcon = (props) => (
+const ZapIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
   </svg>
 );
-const BarChartIcon = (props) => (
+const BarChartIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" x2="12" y1="20" y2="10" /><line x1="18" x2="18" y1="20" y2="4" /><line x1="6" x2="6" y1="20" y2="16" />
     </svg>
 );
-const CheckIcon = (props) => (
+const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M20 6 9 17l-5-5" />
   </svg>
@@ -31,31 +31,31 @@ const CheckIcon = (props) => (
 // Mock AI Chat Component for Hero Section
 const MockAIChat = () => {
   return (
-    <div className="mt-12 lg:mt-0 lg:ml-8 w-full max-w-md mx-auto bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-xl shadow-2xl shadow-blue-500/10">
+    <div className="mt-12 lg:mt-0 lg:ml-8 w-full max-w-md mx-auto bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-xl shadow-2xl shadow-amber-500/10">
       <div className="p-4 border-b border-slate-700">
         <p className="text-sm font-semibold text-slate-200">AI Appeal Assistant</p>
       </div>
       <div className="p-4 space-y-4 text-sm h-80 overflow-y-auto">
         <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 bg-blue-500/20 p-2 rounded-full"><BotIcon className="w-5 h-5 text-blue-400" /></div>
+          <div className="flex-shrink-0 bg-amber-500/20 p-2 rounded-full"><BotIcon className="w-5 h-5 text-amber-400" /></div>
           <div className="bg-slate-800 rounded-lg p-3 max-w-[80%]">
             <p className="text-slate-300">Hello! I'm here to help you contest your fine. Please tell me the PCN number from your ticket.</p>
           </div>
         </div>
         <div className="flex justify-end">
-          <div className="bg-blue-600 rounded-lg p-3 max-w-[80%]">
-            <p className="text-white">Hi, it's IX12345678.</p>
+          <div className="bg-amber-600 rounded-lg p-3 max-w-[80%]">
+            <p className="text-black font-medium">Hi, it's IX12345678.</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
-          <div className="flex-shrink-0 bg-blue-500/20 p-2 rounded-full"><BotIcon className="w-5 h-5 text-blue-400" /></div>
+          <div className="flex-shrink-0 bg-amber-500/20 p-2 rounded-full"><BotIcon className="w-5 h-5 text-amber-400" /></div>
           <div className="bg-slate-800 rounded-lg p-3 max-w-[80%]">
             <p className="text-slate-300">Thank you. Now, in your own words, please tell me what happened. Were the signs unclear? Was there an emergency?</p>
           </div>
         </div>
          <div className="flex justify-end">
-          <div className="bg-blue-600 rounded-lg p-3 max-w-[80%]">
-            <p className="text-white">The parking bay markings were completely faded and there were no visible signs indicating it was a permit-only zone. It was late at night and visibility was poor.</p>
+          <div className="bg-amber-600 rounded-lg p-3 max-w-[80%]">
+            <p className="text-black font-medium">The parking bay markings were completely faded and there were no visible signs indicating it was a permit-only zone.</p>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@ const MockAIChat = () => {
 export default function LandingPage() {
   const features = [
     {
-      icon: <BotIcon className="w-8 h-8 text-blue-400" />,
+      icon: <BotIcon className="w-8 h-8 text-amber-400" />,
       title: "AI-Powered Appeals",
       description: "Our AI analyzes thousands of successful cases and UK traffic law to craft the strongest possible appeal for your specific situation.",
     },
@@ -85,7 +85,7 @@ export default function LandingPage() {
       description: "We focus on the technicalities and procedural errors that get fines cancelled. Contest with the confidence of an expert.",
     },
     {
-        icon: <BarChartIcon className="w-8 h-8 text-amber-400" />,
+        icon: <BarChartIcon className="w-8 h-8 text-sky-400" />,
         title: "Track Your Success",
         description: "Your personal dashboard tracks every appeal, its status, and your success rate, all tied to your vehicle registration.",
     }
@@ -94,7 +94,7 @@ export default function LandingPage() {
   const steps = [
       {
           number: "01",
-          title: "Upload Your Ticket",
+          title: "Tell Us The Details",
           description: "Snap a photo of your PCN or just tell our AI the details. We'll grab all the key information."
       },
       {
@@ -116,14 +116,14 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-grid-slate-800/40 [mask-image:linear-gradient(to_bottom,white_5%,transparent_80%)]"></div>
         <div className="relative container mx-auto px-6 py-24 lg:py-32 flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-400">
               Stop Paying Unfair Fines.
             </h1>
             <p className="mt-4 text-lg text-slate-400 max-w-xl mx-auto lg:mx-0">
               Received a PCN? Don't just pay it. PenaltyPal uses AI to find the winning legal argument and writes the perfect appeal for you. Turn your frustration into a successful challenge.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#pricing" className="bg-blue-600 text-white font-semibold rounded-lg px-8 py-3 hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20">
+              <a href="#pricing" className="bg-amber-500 text-black font-bold rounded-lg px-8 py-3 hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
                 Contest My Fine Now
               </a>
               <a href="#features" className="bg-slate-800/50 border border-slate-700 text-slate-300 font-semibold rounded-lg px-8 py-3 hover:bg-slate-700 transition-all">
@@ -174,7 +174,7 @@ export default function LandingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {steps.map((step, index) => (
                         <div key={index} className="text-center">
-                            <div className="relative inline-flex items-center justify-center w-20 h-20 bg-slate-800 border-2 border-blue-500/50 rounded-full mb-4 text-2xl font-bold text-blue-400">
+                            <div className="relative inline-flex items-center justify-center w-20 h-20 bg-slate-800 border-2 border-amber-500/50 rounded-full mb-4 text-2xl font-bold text-amber-400">
                                 {step.number}
                             </div>
                             <h3 className="text-xl font-bold text-white">{step.title}</h3>
@@ -208,12 +208,12 @@ export default function LandingPage() {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-blue-900/30 p-8 rounded-xl border-2 border-blue-500 flex flex-col shadow-2xl shadow-blue-500/20">
+            <div className="bg-amber-900/20 p-8 rounded-xl border-2 border-amber-500 flex flex-col shadow-2xl shadow-amber-500/20">
               <div className="flex justify-between items-center">
                  <h3 className="text-2xl font-bold text-white">Premium</h3>
-                 <span className="bg-blue-500 text-white text-xs font-bold uppercase px-3 py-1 rounded-full">Most Popular</span>
+                 <span className="bg-amber-500 text-black text-xs font-bold uppercase px-3 py-1 rounded-full">Most Popular</span>
               </div>
-              <p className="mt-2 text-blue-300">For daily commuters & enthusiasts.</p>
+              <p className="mt-2 text-amber-300">For daily commuters & enthusiasts.</p>
               <p className="mt-6 text-5xl font-extrabold text-white">£9.99<span className="text-xl font-medium text-slate-400">/month</span></p>
               <ul className="mt-8 space-y-4 text-slate-300 flex-grow">
                 <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Up to 5 Vehicles</li>
@@ -221,7 +221,7 @@ export default function LandingPage() {
                 <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Advanced Tracking & Analytics</li>
                 <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Priority Support</li>
               </ul>
-              <a href="#" className="mt-8 w-full text-center bg-blue-600 text-white font-semibold rounded-lg px-6 py-3 hover:bg-blue-500 transition-all">Upgrade Now</a>
+              <a href="#" className="mt-8 w-full text-center bg-amber-500 text-black font-bold rounded-lg px-6 py-3 hover:bg-amber-400 transition-all">Upgrade Now</a>
             </div>
 
             {/* Fleet Plan */}
@@ -249,7 +249,7 @@ export default function LandingPage() {
               It takes less than 5 minutes to start your first appeal. Join thousands of drivers who are fighting back against unfair fines.
             </p>
              <div className="mt-8">
-              <a href="#pricing" className="bg-blue-600 text-white font-semibold rounded-lg px-8 py-4 hover:bg-blue-500 transition-all shadow-lg shadow-blue-500/20 text-lg">
+              <a href="#pricing" className="bg-amber-500 text-black font-bold rounded-lg px-8 py-4 hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20 text-lg">
                 Start My First Appeal for Free
               </a>
             </div>
