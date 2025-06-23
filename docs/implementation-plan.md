@@ -54,31 +54,31 @@ Notes from Cursor:
 
 Notes from Cursor:
 
-[ ] P1-T4: Build the Hero Section for the homepage (/app/page.tsx). Must be visually striking and include a headline, sub-headline, and a mock AI chat conversation component to showcase the product's capability.
+[x] P1-T4: Build the Hero Section for the homepage (/app/page.tsx). Must be visually striking and include a headline, sub-headline, and a mock AI chat conversation component to showcase the product's capability.
 
 Notes from Cursor: This is a key visual element. Spend time on the styling and animation of the mock chat.
 
-[ ] P1-T5: Build the Features Section. Create a component that details 3-4 key features with icons and short descriptions (e.g., "AI-Powered Appeals," "Dashboard Management," "Expert Knowledge").
+[x] P1-T5: Build the Features Section. Create a component that details 3-4 key features with icons and short descriptions (e.g., "AI-Powered Appeals," "Dashboard Management," "Expert Knowledge").
 
 Notes from Cursor:
 
-[ ] P1-T6: Build the "How It Works" Section. Create a 3 or 4-step visual guide (e.g., 1. Tell us what happened -> 2. Get your AI-generated appeal -> 3. Submit and track).
+[x] P1-T6: Build the "How It Works" Section. Create a 3 or 4-step visual guide (e.g., 1. Tell us what happened -> 2. Get your AI-generated appeal -> 3. Submit and track).
 
 Notes from Cursor:
 
-[ ] P1-T7: Build the Pricing Section. Create a component displaying the three tiers: Freemium, Premium (Individual), and Fleet (Business). Clearly list the features of each.
+[x] P1-T7: Build the Pricing Section. Create a component displaying the three tiers: Freemium, Premium (Individual), and Fleet (Business). Clearly list the features of each.
 
 Notes from Cursor:
 
-[ ] P1-T8: Build a Testimonials/Social Proof Section. Use placeholder content for now.
+[x] P1-T8: Build a Testimonials/Social Proof Section. Use placeholder content for now.
 
 Notes from Cursor:
 
-[ ] P1-T9: Build a final Call-to-Action (CTA) Section at the bottom of the page, urging users to sign up.
+[x] P1-T9: Build a final Call-to-Action (CTA) Section at the bottom of the page, urging users to sign up.
 
 Notes from Cursor:
 
-[ ] P1-T10: Ensure the entire landing page is fully responsive and looks polished on mobile, tablet, and desktop screens.
+[x] P1-T10: Ensure the entire landing page is fully responsive and looks polished on mobile, tablet, and desktop screens.
 
 Notes from Cursor: Test thoroughly on different viewport sizes.
 
