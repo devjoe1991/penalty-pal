@@ -16,7 +16,7 @@ Notes: This is the foundation. Ensure all environment variables and connections 
 
 [x] P0-T4: Install and configure shadcn/ui. Initialize it for the project.
 
-[ ] P0-T5: Set up Git repository and push initial project structure to GitHub. Create main and develop branches.
+[x] P0-T5: Set up Git repository and push initial project structure to GitHub. Create main and develop branches.
 
 [ ] P0-T6: Define database schema in SQL. Create a /supabase/migrations file for profiles, vehicles, and fines tables with appropriate columns, types, and relationships. Run the migration.
 
