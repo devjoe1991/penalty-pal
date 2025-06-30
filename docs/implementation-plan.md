@@ -51,7 +51,7 @@ Notes: Completed.
 Phase 2: Authentication & User Accounts
 Objective: Implement secure user registration and login functionality.
 
-[ ] P2-T1: Create the Sign-Up page (/app/signup/page.tsx). Hook it up to the Supabase signUp method.
+[x] P2-T1: Create the Sign-Up page (/app/signup/page.tsx). Hook it up to the Supabase signUp method.
 
 [ ] P2-T2: Create the Login page (/app/login/page.tsx). Hook it up to the Supabase signInWithPassword method.
 
