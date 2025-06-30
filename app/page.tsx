@@ -1,31 +1,23 @@
 import React from 'react';
+import { Bot, ShieldCheck, Zap, BarChart, Check } from 'lucide-react';
+import { PricingCarousel } from '@/components/marketing/PricingCarousel';
 
 // I'm using inline SVGs for icons to keep this self-contained.
 // In your actual project, you would import these from 'lucide-react'.
 const BotIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" />
-  </svg>
+  <Bot {...props} />
 );
 const ShieldCheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" />
-  </svg>
+  <ShieldCheck {...props} />
 );
 const ZapIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-  </svg>
+  <Zap {...props} />
 );
 const BarChartIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" x2="12" y1="20" y2="10" /><line x1="18" x2="18" y1="20" y2="4" /><line x1="6" x2="6" y1="20" y2="16" />
-    </svg>
+  <BarChart {...props} />
 );
 const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 6 9 17l-5-5" />
-  </svg>
+  <Check {...props} />
 );
 
 // Mock AI Chat Component for Hero Section
@@ -193,50 +185,8 @@ export default function LandingPage() {
             <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white">Simple, Transparent Pricing</h2>
             <p className="mt-4 text-lg text-slate-400">Choose the plan that's right for you. Start for free, no credit card required.</p>
           </div>
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Free Plan */}
-            <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 flex flex-col">
-              <h3 className="text-2xl font-bold text-white">Freemium</h3>
-              <p className="mt-2 text-slate-400">For the occasional driver.</p>
-              <p className="mt-6 text-5xl font-extrabold text-white">£0</p>
-              <ul className="mt-8 space-y-4 text-slate-300 flex-grow">
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> 1 Vehicle Registration</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> 5 AI-Powered Appeals</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Dashboard & Tracking</li>
-              </ul>
-              <a href="#" className="mt-8 w-full text-center bg-slate-700 text-white font-semibold rounded-lg px-6 py-3 hover:bg-slate-600 transition-all">Get Started for Free</a>
-            </div>
-
-            {/* Premium Plan */}
-            <div className="bg-amber-900/20 p-8 rounded-xl border-2 border-amber-500 flex flex-col shadow-2xl shadow-amber-500/20">
-              <div className="flex justify-between items-center">
-                 <h3 className="text-2xl font-bold text-white">Premium</h3>
-                 <span className="bg-amber-500 text-black text-xs font-bold uppercase px-3 py-1 rounded-full">Most Popular</span>
-              </div>
-              <p className="mt-2 text-amber-300">For daily commuters & enthusiasts.</p>
-              <p className="mt-6 text-5xl font-extrabold text-white">£9.99<span className="text-xl font-medium text-slate-400">/month</span></p>
-              <ul className="mt-8 space-y-4 text-slate-300 flex-grow">
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Up to 5 Vehicles</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Unlimited AI Appeals</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Advanced Tracking & Analytics</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Priority Support</li>
-              </ul>
-              <a href="#" className="mt-8 w-full text-center bg-amber-500 text-black font-bold rounded-lg px-6 py-3 hover:bg-amber-400 transition-all">Upgrade Now</a>
-            </div>
-
-            {/* Fleet Plan */}
-            <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 flex flex-col">
-              <h3 className="text-2xl font-bold text-white">Fleet</h3>
-              <p className="mt-2 text-slate-400">For businesses that operate vehicles.</p>
-              <p className="mt-6 text-4xl font-extrabold text-white">Let's Talk</p>
-              <ul className="mt-8 space-y-4 text-slate-300 flex-grow">
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Unlimited Vehicles</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Unlimited AI Appeals</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Centralized Fleet Dashboard</li>
-                <li className="flex items-center gap-3"><CheckIcon className="w-5 h-5 text-green-400" /> Dedicated Account Manager</li>
-              </ul>
-              <a href="#" className="mt-8 w-full text-center bg-slate-700 text-white font-semibold rounded-lg px-6 py-3 hover:bg-slate-600 transition-all">Contact Sales</a>
-            </div>
+          <div className="mt-16 flex justify-center">
+            <PricingCarousel />
           </div>
         </div>
       </section>
