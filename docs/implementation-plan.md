@@ -70,7 +70,7 @@ Objective: Build the authenticated user's main dashboard for managing vehicles a
 
 [x] P3-T2: Build the Sidebar component (/components/dashboard/Sidebar.tsx).
 
-[ ] P3-T3: Build the main dashboard page (/app/dashboard/page.tsx).
+[x] P3-T3: Build the main dashboard page (/app/dashboard/page.tsx).
 
 [ ] P3-T4: Build the "My Vehicles" page (/app/dashboard/vehicles/page.tsx).
 
