@@ -76,9 +76,9 @@ Objective: Build the authenticated user's main dashboard for managing vehicles a
 
 [x] P3-T5: Implement the "Add New Vehicle" functionality.
 
-[ ] P3-T6: Build the fine list component.
+[x] P3-T6: Build the fine list component.
 
-[ ] P3-T7: Implement the ability to update a fine's status from the dashboard list.
+[x] P3-T7: Implement the ability to update a fine's status from the dashboard list.
 
 Phase 4: AI Appeal Generation (Revised)
 Objective: Implement the dynamic and context-aware AI chat functionality.

@@ -17,6 +17,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import FineList from "@/components/dashboard/FineList";
 
 export default async function DashboardPage() {
   const supabase = createClient();
@@ -48,7 +49,7 @@ export default async function DashboardPage() {
 
   const vehicleCount = vehiclesData.count ?? 0;
   const activeFinesCount = activeFinesData.count ?? 0;
-  const recentFines = recentFinesData.data ?? [];
+  const recentFines = recentFinesData.data as any[] ?? [];
 
   return (
     <div className="space-y-8">
@@ -87,32 +88,7 @@ export default async function DashboardPage() {
         <Card>
           <CardContent className="pt-6">
             {recentFines.length > 0 ? (
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>PCN Number</TableHead>
-                    <TableHead>Issuing Authority</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Date</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {recentFines.map((fine) => (
-                    <TableRow key={fine.id}>
-                      <TableCell className="font-medium">
-                        {fine.pcn_number}
-                      </TableCell>
-                      <TableCell>{fine.issuing_authority}</TableCell>
-                      <TableCell>
-                        <Badge variant="outline">{fine.status}</Badge>
-                      </TableCell>
-                      <TableCell>
-                        {new Date(fine.contravention_date).toLocaleDateString()}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+              <FineList fines={recentFines} />
             ) : (
               <div className="text-center py-8">
                 <p className="text-muted-foreground">You haven't contested any fines yet.</p>
