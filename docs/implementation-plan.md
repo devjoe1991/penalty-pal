@@ -57,11 +57,11 @@ Objective: Implement secure user registration and login functionality.
 
 [x] P2-T3: Implement a server-side trigger using Supabase SQL to automatically create a new row in public.profiles AND public.subscriptions (with a default 'freemium' plan) when a new user signs up in auth.users.
 
-[ ] P2-T4: Implement logout functionality.
+[x] P2-T4: Implement logout functionality.
 
-[ ] P2-T5: Create protected routes. Implement logic in a middleware file (/middleware.ts) to redirect unauthenticated users away from dashboard pages.
+[x] P2-T5: Create protected routes. Implement logic in a middleware file (/middleware.ts) to redirect unauthenticated users away from dashboard pages.
 
-[ ] P2-T6: Update the Navbar to conditionally display "Login/Sign Up" for guests and "Dashboard/Logout" for authenticated users.
+[x] P2-T6: Update the Navbar to conditionally display "Login/Sign Up" for guests and "Dashboard/Logout" for authenticated users.
 
 Phase 3: Core Application - Dashboard & Fine Management
 Objective: Build the authenticated user's main dashboard for managing vehicles and fines.

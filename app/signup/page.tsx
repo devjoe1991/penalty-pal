@@ -59,13 +59,12 @@ export default function SignUpPage() {
 
     if (error) {
       setError(error.message)
+      setLoading(false)
     } else {
-      // As per workflow, redirect to dashboard on successful sign up.
-      // Supabase handles the session. The user will be asked to confirm their email,
-      // but they are technically "signed up" at this point.
-      router.push('/dashboard')
+      // On successful sign-up, redirect to the main dashboard.
+      // The middleware will handle the session.
+      router.refresh()
     }
-    setLoading(false)
   }
 
   return (

@@ -61,10 +61,9 @@ export default function LoginPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      // On successful login, redirect to the main dashboard.
-      // The Supabase client handles session persistence.
-      router.push('/dashboard')
-      // We don't need to setLoading(false) here as the page will redirect.
+      // On successful login, refresh the page.
+      // The middleware will handle the redirect and session update.
+      router.refresh()
     }
   }
 
