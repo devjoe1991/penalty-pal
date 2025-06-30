@@ -91,7 +91,7 @@ Objective: Implement the dynamic and context-aware AI chat functionality.
 
 [ ] P4-T4: Edge Function (V2 Feature): Implement PCN image handling. If an image is part of the request, call a multimodal LLM (e.g., Gemini Vision) to perform OCR and extract key details into a JSON object.
 
-[ ] P4-T5: Edge Function: Implement the core LLM call logic. Construct the dynamic master prompt from the AI dev plan, injecting the user's role, usage data, and any extracted PCN info. Securely call the main LLM API.
+[x] P4-T5: Edge Function: Implement the core LLM call logic. Construct the dynamic master prompt from the AI dev plan, injecting the user's role, usage data, and any extracted PCN info. Securely call the main LLM API.
 
 [ ] P4-T6: Build the frontend chat interface (/app/contest/page.tsx). The UI must include an "Upload Ticket" button and be able to handle multiple states (e.g., manual input, confirming extracted data, displaying "upgrade required" messages).
 

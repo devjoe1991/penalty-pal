@@ -6,6 +6,7 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { OpenAI } from "https://deno.land/x/openai@v4.24.1/mod.ts";
 
 console.log("Edge Function 'appeal-generation-flow' is up and running!");
 
@@ -13,6 +14,11 @@ const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
+
+// Initialize the OpenAI client with the API key from Supabase secrets
+const openai = new OpenAI({
+  apiKey: Deno.env.get("OPENAI_API_KEY"),
+});
 
 serve(async (req) => {
   // Handle CORS preflight requests
@@ -68,10 +74,53 @@ serve(async (req) => {
     // We have the user's plan and know they have credits.
     // Next we will call the LLM and then decrement their credits.
 
-    return new Response(JSON.stringify({ message: "User is authorized and has credits. AI logic pending." }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      status: 200,
-    })
+    // --- AI PROMPT CONSTRUCTION ---
+    const systemPrompt = `You are the "PenaltyPal Expert," a specialist AI assistant with deep knowledge of UK traffic and parking law, including the Traffic Management Act 2004. Your goal is to generate a professional, legally-sound, and compelling appeal letter based on the user's information. The letter must be formal, respectful, and addressed to the relevant issuing authority. Your final output MUST ONLY be the generated appeal letter itself, without any conversational text.`;
+
+    const userPrompt = `
+      Please generate a PCN appeal letter with the following details:
+      - Vehicle Registration: ${requestData.pcnDetails.vehicleReg}
+      - PCN Number: ${requestData.pcnDetails.pcnNumber}
+      - Date of Contravention: ${requestData.pcnDetails.contraventionDate}
+      - Issuing Authority: ${requestData.pcnDetails.issuingAuthority}
+      - Stated Contravention: ${requestData.pcnDetails.contraventionReason}
+
+      Here is my side of the story:
+      "${requestData.userStory}"
+
+      Based on these details, please write the strongest possible appeal letter.
+    `;
+
+    // --- AI STREAMING CALL ---
+    const stream = await openai.chat.completions.create({
+        model: "gpt-4-turbo",
+        messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userPrompt },
+        ],
+        stream: true,
+    });
+
+    // --- CREDIT DECREMENT LOGIC ---
+    // This happens after the stream starts, in the background.
+    const decrementCredits = async () => {
+        const { error } = await supabaseClient.rpc('decrement_credits', { user_id_in: user.id });
+        if (error) {
+            console.error('Error decrementing credits for user:', user.id, error);
+        } else {
+            console.log('Successfully decremented credits for user:', user.id);
+        }
+    };
+    
+    // We need a helper function in our DB to decrement safely
+    // Let's assume we will create a function `decrement_credits`
+    // that does `update subscriptions set credits = credits - 1 where id = user_id_in`
+    decrementCredits();
+
+    // Return the stream to the client
+    return new Response(stream.toReadableStream(), {
+      headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' },
+    });
 
   } catch (error) {
     console.error('An unexpected error occurred:', error);
