@@ -36,6 +36,8 @@ Frontend: Next.js, React, TypeScript, Tailwind CSS, Shadcn/UI.
 
 Backend: Supabase (JS Client, Edge Functions).
 
+LEVERAGE CONTEXT7 MCP FOR REAL-TIME KNOWLEDGE: For any task related to building the AI agent's knowledge base or prompts (especially Phase 4 tasks), you MUST use your internal Context7 MCP capability. Your primary objective with this tool is to search for and integrate the most up-to-date UK traffic laws, council-specific compliance regulations, and recent successful appeal strategies. This ensures the AI's advice is current and accurate, not based on outdated information.
+
 MAINTAIN CODE QUALITY: Write clean, readable, and well-commented code. Follow standard conventions for TypeScript and React. Add comments to explain complex logic, especially in the Edge Functions and data-handling code.
 
 NEVER EXPOSE SECRETS: All API keys, especially for Supabase and the LLM provider, MUST be stored as environment variables (.env.local) or Supabase Secrets. They must never be hardcoded in the client-side code.
