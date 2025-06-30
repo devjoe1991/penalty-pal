@@ -22,7 +22,7 @@ Notes: This is the foundation. Ensure all environment variables and connections 
 
 [ ] P0-T7: (New) Add a subscriptions table to the database schema. This table should link to user_id and include columns for status (e.g., 'active', 'cancelled'), plan (e.g., 'freemium', 'premium', 'fleet'), and usage counts.
 
-[ ] P0-T8: Implement basic Row Level Security (RLS) policies for all tables. Ensure users can only select/insert/update/delete their own data.
+[x] P0-T8: Implement basic Row Level Security (RLS) policies for all tables. Ensure users can only select/insert/update/delete their own data.
 
 Phase 1: Landing Page & Static Content
 Objective: Build the public-facing, visually stunning marketing website.
