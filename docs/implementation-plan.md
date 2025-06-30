@@ -89,17 +89,17 @@ Objective: Implement the dynamic and context-aware AI chat functionality.
 
 [x] P4-T3: Edge Function: Implement the Freemium limit check. If the user's limits are exceeded, the function must return a specific error/message to the client, preventing further execution.
 
-[ ] P4-T4: Edge Function (V2 Feature): Implement PCN image handling. If an image is part of the request, call a multimodal LLM (e.g., Gemini Vision) to perform OCR and extract key details into a JSON object.
+[x] P4-T4: Edge Function (V2 Feature): Implement PCN image handling. If an image is part of the request, call a multimodal LLM (e.g., Gemini Vision) to perform OCR and extract key details into a JSON object.
 
 [x] P4-T5: Edge Function: Implement the core LLM call logic. Construct the dynamic master prompt from the AI dev plan, injecting the user's role, usage data, and any extracted PCN info. Securely call the main LLM API.
 
-[ ] P4-T6: Build the frontend chat interface (/app/contest/page.tsx). The UI must include an "Upload Ticket" button and be able to handle multiple states (e.g., manual input, confirming extracted data, displaying "upgrade required" messages).
+[x] P4-T6: Build the frontend chat interface (/app/contest/page.tsx). The UI must include an "Upload Ticket" button and be able to handle multiple states (e.g., manual input, confirming extracted data, displaying "upgrade required" messages).
 
-[ ] P4-T7: Implement the multi-step manual conversation flow as a primary input method.
+[x] P4-T7: Implement the multi-step manual conversation flow as a primary input method.
 
-[ ] P4-T8: Connect the frontend chat UI to the appeal-generation-flow Edge Function. Ensure the client can handle both streaming text responses for the appeal and structured messages (like the upgrade prompt).
+[x] P4-T8: Connect the frontend chat UI to the appeal-generation-flow Edge Function. Ensure the client can handle both streaming text responses for the appeal and structured messages (like the upgrade prompt).
 
-[ ] P4-T9: Add the "Copy Appeal Text" and "Save to Dashboard" buttons. The "Save" button should insert the PCN data and the final generated appeal text into the fines table.
+[x] P4-T9: Add the "Copy Appeal Text" and "Save to Dashboard" buttons. The "Save" button should insert the PCN data and the final generated appeal text into the fines table.
 
 Phase 5: Subscriptions & Billing
 Objective: Integrate Stripe for handling premium subscriptions.
