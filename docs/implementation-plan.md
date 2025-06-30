@@ -55,7 +55,7 @@ Objective: Implement secure user registration and login functionality.
 
 [x] P2-T2: Create the Login page (/app/login/page.tsx). Hook it up to the Supabase signInWithPassword method.
 
-[ ] P2-T3: Implement a server-side trigger using Supabase SQL to automatically create a new row in public.profiles AND public.subscriptions (with a default 'freemium' plan) when a new user signs up in auth.users.
+[x] P2-T3: Implement a server-side trigger using Supabase SQL to automatically create a new row in public.profiles AND public.subscriptions (with a default 'freemium' plan) when a new user signs up in auth.users.
 
 [ ] P2-T4: Implement logout functionality.
 
