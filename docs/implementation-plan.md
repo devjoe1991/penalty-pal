@@ -87,7 +87,7 @@ Objective: Implement the dynamic and context-aware AI chat functionality.
 
 [x] P4-T2: Edge Function: Implement logic to receive a request and first query the subscriptions and fines tables to fetch the user's role, plan, and current usage counts.
 
-[ ] P4-T3: Edge Function: Implement the Freemium limit check. If the user's limits are exceeded, the function must return a specific error/message to the client, preventing further execution.
+[x] P4-T3: Edge Function: Implement the Freemium limit check. If the user's limits are exceeded, the function must return a specific error/message to the client, preventing further execution.
 
 [ ] P4-T4: Edge Function (V2 Feature): Implement PCN image handling. If an image is part of the request, call a multimodal LLM (e.g., Gemini Vision) to perform OCR and extract key details into a JSON object.
 
