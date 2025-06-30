@@ -66,9 +66,9 @@ Objective: Implement secure user registration and login functionality.
 Phase 3: Core Application - Dashboard & Fine Management
 Objective: Build the authenticated user's main dashboard for managing vehicles and fines.
 
-[ ] P3-T1: Create the main dashboard layout (/app/dashboard/layout.tsx) with a persistent sidebar.
+[x] P3-T1: Create the main dashboard layout (/app/dashboard/layout.tsx) with a persistent sidebar.
 
-[ ] P3-T2: Build the Sidebar component (/components/dashboard/Sidebar.tsx).
+[x] P3-T2: Build the Sidebar component (/components/dashboard/Sidebar.tsx).
 
 [ ] P3-T3: Build the main dashboard page (/app/dashboard/page.tsx).
 
