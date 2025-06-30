@@ -83,7 +83,7 @@ Objective: Build the authenticated user's main dashboard for managing vehicles a
 Phase 4: AI Appeal Generation (Revised)
 Objective: Implement the dynamic and context-aware AI chat functionality.
 
-[ ] P4-T1: Create the Supabase Edge Function appeal-generation-flow. Set up the file structure in /supabase/functions/appeal-generation-flow/index.ts.
+[x] P4-T1: Create the Supabase Edge Function appeal-generation-flow. Set up the file structure in /supabase/functions/appeal-generation-flow/index.ts.
 
 [ ] P4-T2: Edge Function: Implement logic to receive a request and first query the subscriptions and fines tables to fetch the user's role, plan, and current usage counts.
 
