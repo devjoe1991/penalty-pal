@@ -20,7 +20,7 @@ Notes: This is the foundation. Ensure all environment variables and connections 
 
 [x] P0-T6: Define database schema in SQL. Create a /supabase/migrations file for profiles, vehicles, and fines tables with appropriate columns, types, and relationships. Run the migration.
 
-[ ] P0-T7: (New) Add a subscriptions table to the database schema. This table should link to user_id and include columns for status (e.g., 'active', 'cancelled'), plan (e.g., 'freemium', 'premium', 'fleet'), and usage counts.
+[x] P0-T7: (New) Add a subscriptions table to the database schema. This table should link to user_id and include columns for status (e.g., 'active', 'cancelled'), plan (e.g., 'freemium', 'premium', 'fleet'), and usage counts.
 
 [x] P0-T8: Implement basic Row Level Security (RLS) policies for all tables. Ensure users can only select/insert/update/delete their own data.
 
