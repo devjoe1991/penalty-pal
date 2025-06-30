@@ -5,6 +5,7 @@
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 console.log("Edge Function 'appeal-generation-flow' is up and running!");
 
@@ -14,28 +15,66 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
-  // This is needed if you're planning to invoke your function from a browser.
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
-    const { data } = await req.json()
-    console.log("Received data:", data);
+    // 1. Create a Supabase client with the Auth context of the user.
+    const supabaseClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
+    )
 
-    // Placeholder for future AI logic.
-    // In the next steps, we will:
-    // 1. Verify user authentication.
-    // 2. Check user's credit balance.
-    // 3. Construct a prompt for the LLM.
-    // 4. Call the LLM API.
-    // 5. Return the AI's response.
+    // 2. Get the user from the session.
+    const { data: { user }, error: userError } = await supabaseClient.auth.getUser()
+    if (userError || !user) {
+      console.error('User not found:', userError);
+      return new Response(JSON.stringify({ error: 'Authentication failed' }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 401,
+      })
+    }
+    
+    // 3. Get the user's subscription and credit details.
+    const { data: subscription, error: subError } = await supabaseClient
+      .from('subscriptions')
+      .select('plan, credits')
+      .single()
 
-    return new Response(JSON.stringify({ message: "Request received successfully. AI logic pending." }), {
+    if (subError || !subscription) {
+      console.error('Subscription not found for user:', user.id, subError);
+      return new Response(JSON.stringify({ error: 'Could not find user subscription.' }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 404,
+      })
+    }
+
+    // 4. Implement the Freemium limit check.
+    if (subscription.plan === 'freemium' && subscription.credits <= 0) {
+      console.log('Freemium user has no credits remaining:', user.id);
+      return new Response(JSON.stringify({ error: 'You have used your free appeal. Please upgrade to continue.' }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 402, // 402 Payment Required is a fitting status code
+      })
+    }
+
+    const requestData = await req.json()
+    console.log("User authorized. Received data:", requestData);
+    
+    // Placeholder for next steps (AI logic)
+    // We have the user's plan and know they have credits.
+    // Next we will call the LLM and then decrement their credits.
+
+    return new Response(JSON.stringify({ message: "User is authorized and has credits. AI logic pending." }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 200,
     })
+
   } catch (error) {
+    console.error('An unexpected error occurred:', error);
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 400,
