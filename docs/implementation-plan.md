@@ -14,7 +14,7 @@ Notes: This is the foundation. Ensure all environment variables and connections 
 
 [x] P0-T3: Integrate Supabase with Next.js. Create a Supabase client helper (/lib/supabase/client.ts). Store Supabase URL and keys in .env.local.
 
-[ ] P0-T4: Install and configure shadcn/ui. Initialize it for the project.
+[x] P0-T4: Install and configure shadcn/ui. Initialize it for the project.
 
 [ ] P0-T5: Set up Git repository and push initial project structure to GitHub. Create main and develop branches.
 
