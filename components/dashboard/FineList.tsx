@@ -45,7 +45,7 @@ export default function FineList({ fines }: FineListProps) {
     }
   };
 
-  const statuses = ['Submitted', 'Awaiting Response', 'Won', 'Lost'];
+  const statuses = ['Appeal Generated', 'Submitted', 'Awaiting Response', 'Won', 'Lost'];
 
   return (
     <Table>
