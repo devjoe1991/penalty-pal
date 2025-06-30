@@ -1,13 +1,12 @@
 import { createClient } from "@/lib/supabase/server";
-import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Car } from "lucide-react";
+import AddVehicleForm from "@/components/dashboard/AddVehicleForm";
 
 export default async function MyVehiclesPage() {
   const supabase = createClient();
@@ -35,7 +34,7 @@ export default async function MyVehiclesPage() {
             Manage the vehicles you want to track for appeals.
           </p>
         </div>
-        <Button>Add New Vehicle</Button>
+        <AddVehicleForm />
       </div>
 
       <div>

@@ -74,7 +74,7 @@ Objective: Build the authenticated user's main dashboard for managing vehicles a
 
 [x] P3-T4: Build the "My Vehicles" page (/app/dashboard/vehicles/page.tsx).
 
-[ ] P3-T5: Implement the "Add New Vehicle" functionality.
+[x] P3-T5: Implement the "Add New Vehicle" functionality.
 
 [ ] P3-T6: Build the fine list component.
 
