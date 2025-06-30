@@ -1,3 +1,10 @@
+# Supabase Configuration
+project_id = "penalty-pal"
+
+[auth]
+# Email configuration for local development
+[auth.email]
+enable_confirmations = false
 
 [functions.appeal-generation-flow]
 enabled = true

@@ -101,6 +101,16 @@ Objective: Implement the dynamic and context-aware AI chat functionality.
 
 [x] P4-T9: Add the "Copy Appeal Text" and "Save to Dashboard" buttons. The "Save" button should insert the PCN data and the final generated appeal text into the fines table.
 
+Phase 4.5: Subscription Status & User Experience Enhancements
+Objective: Add subscription status display and billing page to improve user experience.
+Notes: These features help users understand their current plan and usage.
+
+[x] P4.5-T1: Add subscription status display to the dashboard. Show current plan (freemium/premium), remaining credits, and usage statistics.
+
+[x] P4.5-T2: Create a billing page (/app/dashboard/billing/page.tsx) that shows subscription details and plan comparison.
+
+[x] P4.5-T3: Update the sidebar or header to show remaining credits for freemium users.
+
 Phase 5: Subscriptions & Billing
 Objective: Integrate Stripe for handling premium subscriptions.
 Notes: This is a Post-MVP feature but the plan is included for future reference.

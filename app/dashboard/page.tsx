@@ -31,7 +31,7 @@ export default async function DashboardPage() {
   }
 
   // Fetch all data in parallel for efficiency
-  const [vehiclesData, activeFinesData, recentFinesData] = await Promise.all([
+  const [vehiclesData, activeFinesData, recentFinesData, subscriptionData] = await Promise.all([
     // 1. Fetch vehicle count
     supabase.from("vehicles").select("id", { count: "exact", head: true }),
     // 2. Fetch active fines count
@@ -45,11 +45,18 @@ export default async function DashboardPage() {
       .select("id, pcn_number, issuing_authority, status, contravention_date")
       .order("created_at", { ascending: false })
       .limit(5),
+    // 4. Fetch user's subscription info
+    supabase
+      .from("subscriptions")
+      .select("plan, status, credits")
+      .eq("id", user.id)
+      .single(),
   ]);
 
   const vehicleCount = vehiclesData.count ?? 0;
   const activeFinesCount = activeFinesData.count ?? 0;
   const recentFines = recentFinesData.data as any[] ?? [];
+  const subscription = subscriptionData.data ?? { plan: 'freemium', status: 'active', credits: 1 };
 
   return (
     <div className="space-y-8">
@@ -61,7 +68,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Stat Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader>
             <CardTitle>Total Vehicles</CardTitle>
@@ -78,6 +85,35 @@ export default async function DashboardPage() {
           </CardHeader>
           <CardContent>
             <p className="text-4xl font-bold">{activeFinesCount}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Current Plan</CardTitle>
+            <CardDescription>Your subscription tier.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center space-x-2">
+              <Badge variant={subscription.plan === 'freemium' ? 'secondary' : 'default'}>
+                {subscription.plan.charAt(0).toUpperCase() + subscription.plan.slice(1)}
+              </Badge>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Credits Remaining</CardTitle>
+            <CardDescription>Appeals you can generate.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-4xl font-bold">
+              {subscription.plan === 'freemium' ? subscription.credits : '∞'}
+            </p>
+            {subscription.plan === 'freemium' && subscription.credits === 0 && (
+              <Button asChild className="mt-2" size="sm">
+                <Link href="/dashboard/billing">Upgrade Now</Link>
+              </Button>
+            )}
           </CardContent>
         </Card>
       </div>

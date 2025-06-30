@@ -61,9 +61,8 @@ export default function SignUpPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      // On successful sign-up, redirect to the main dashboard.
-      // The middleware will handle the session.
-      router.refresh()
+      // On successful sign-up, redirect to the dashboard
+      router.push('/dashboard')
     }
   }
 
