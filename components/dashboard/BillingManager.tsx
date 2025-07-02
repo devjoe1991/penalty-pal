@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 
 // IMPORTANT: Replace these with the actual Price IDs you saved from Stripe
 const priceIds = {
-    premium_monthly: 'price_xxxxxxxxxxxxxx', // Your monthly premium price ID
-    premium_yearly: 'price_yyyyyyyyyyyyyy',  // Your yearly premium price ID
+    premium_monthly: 'price_1RgOli2eLkG1x1Zm9EkIZCbi', // Your monthly premium price ID
+    premium_yearly: 'price_1RgOli2eLkG1x1Zm918GaCKp',  // Your yearly premium price ID
 };
 
 interface BillingManagerProps {
