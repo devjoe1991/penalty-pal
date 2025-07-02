@@ -117,8 +117,8 @@ Notes: This is a Post-MVP feature but the plan is included for future reference.
 
 [x] P5-T1: Set up a Stripe account and create products for "Premium Individual" and "Fleet Management".
 
-[ ] P5-T2: Integrate the Stripe Node.js library into a new set of Supabase Edge Functions for handling webhooks and creating checkout sessions.
+[x] P5-T2: Integrate the Stripe Node.js library into a new set of Supabase Edge Functions for handling webhooks and creating checkout sessions.
 
-[ ] P5-T3: Build a billing/upgrade page in the user's dashboard where they can manage their subscription.
+[x] P5-T3: Build a billing/upgrade page in the user's dashboard where they can manage their subscription.
 
-[ ] P5-T4: Use Stripe webhooks to listen for successful payments and update the user's status in the subscriptions table accordingly.
+[x] P5-T4: Use Stripe webhooks to listen for successful payments and update the user's status in the subscriptions table accordingly.
