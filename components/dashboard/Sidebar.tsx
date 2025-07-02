@@ -54,11 +54,20 @@ export default function Sidebar() {
                 </Badge>
               )}
             </div>
-            {subscription.credits === 0 && (
-              <Button asChild size="sm" className="mt-2 w-full">
-                <Link href="/dashboard/billing">Upgrade</Link>
-              </Button>
-            )}
+                         {subscription.credits === 0 ? (
+               <div className="flex gap-1 mt-2">
+                 <Button asChild size="sm" className="flex-1 text-xs">
+                   <Link href="/dashboard/billing">Upgrade</Link>
+                 </Button>
+                 <Button asChild size="sm" variant="outline" className="flex-1 text-xs">
+                   <Link href="/dashboard/billing?tab=topup">Buy Credits</Link>
+                 </Button>
+               </div>
+             ) : (
+               <Button asChild size="sm" variant="outline" className="mt-2 w-full text-xs">
+                 <Link href="/dashboard/billing?tab=topup">Top Up</Link>
+               </Button>
+             )}
           </div>
         )}
 

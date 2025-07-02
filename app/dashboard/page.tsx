@@ -109,10 +109,23 @@ export default async function DashboardPage() {
             <p className="text-4xl font-bold">
               {subscription.plan === 'freemium' ? subscription.credits : '∞'}
             </p>
-            {subscription.plan === 'freemium' && subscription.credits === 0 && (
-              <Button asChild className="mt-2" size="sm">
-                <Link href="/dashboard/billing">Upgrade Now</Link>
-              </Button>
+            {subscription.plan === 'freemium' && (
+              <div className="flex gap-2 mt-2">
+                {subscription.credits === 0 ? (
+                  <>
+                    <Button asChild size="sm" className="flex-1">
+                      <Link href="/dashboard/billing">Upgrade Plan</Link>
+                    </Button>
+                    <Button asChild size="sm" variant="outline" className="flex-1">
+                      <Link href="/dashboard/billing?tab=topup">Buy Credits</Link>
+                    </Button>
+                  </>
+                ) : (
+                  <Button asChild size="sm" variant="outline" className="w-full">
+                    <Link href="/dashboard/billing?tab=topup">Top Up Credits</Link>
+                  </Button>
+                )}
+              </div>
             )}
           </CardContent>
         </Card>

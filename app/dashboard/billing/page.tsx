@@ -8,7 +8,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
+import { Check, X, Zap } from "lucide-react";
+import BillingTabs from "@/components/dashboard/BillingTabs";
 
 export default async function BillingPage() {
   const supabase = createClient();
