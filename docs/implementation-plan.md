@@ -115,7 +115,7 @@ Phase 5: Subscriptions & Billing
 Objective: Integrate Stripe for handling premium subscriptions.
 Notes: This is a Post-MVP feature but the plan is included for future reference.
 
-[ ] P5-T1: Set up a Stripe account and create products for "Premium Individual" and "Fleet Management".
+[x] P5-T1: Set up a Stripe account and create products for "Premium Individual" and "Fleet Management".
 
 [ ] P5-T2: Integrate the Stripe Node.js library into a new set of Supabase Edge Functions for handling webhooks and creating checkout sessions.
 
