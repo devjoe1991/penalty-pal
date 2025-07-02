@@ -122,3 +122,12 @@ Notes: This is a Post-MVP feature but the plan is included for future reference.
 [x] P5-T3: Build a billing/upgrade page in the user's dashboard where they can manage their subscription.
 
 [x] P5-T4: Use Stripe webhooks to listen for successful payments and update the user's status in the subscriptions table accordingly.
+
+Phase 6: Advanced Features (New)
+Objective: Enhance the user experience with high-value V2 features.
+
+[ ] P6-T1: Implement Email Notifications (NOTIF-01). Set up Supabase Auth email templates for password resets, etc. Create a new Edge Function to send transactional emails (e.g., "Your appeal status has changed to 'Won'!") using a service like Resend or SendGrid.
+
+[ ] P6-T2: Implement PCN Document Upload (AI-04). Update the contest page to allow image uploads. Update the appeal-generation-flow Edge Function to call a multimodal LLM (like GPT-4o Vision) to perform OCR and extract PCN details automatically.
+
+[ ] P6-T3: Build an advanced analytics dashboard for Fleet users. Add charts and data visualizations showing appeal success rates, common fine locations, and costs over time.

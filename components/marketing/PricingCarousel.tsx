@@ -7,17 +7,17 @@ import { cn } from '@/lib/utils'
 
 const pricingPlans = [
   {
-    tier: 'Freemium',
-    description: 'A perfect introduction.',
+    tier: 'Free Trial',
+    description: 'Perfect introduction with no risk.',
     price: '£0',
     priceSuffix: '',
     features: [
       { text: '1 Free', highlight: 'Appeal Credit' },
       { text: 'Manage 1 Vehicle' },
       { text: 'Standard AI Analysis' },
-      { text: 'Dashboard & Tracking' },
+      { text: 'Full Dashboard Access' },
     ],
-    buttonText: 'Get Started for Free',
+    buttonText: 'Start Free Trial',
     buttonLink: '/signup',
     isPopular: false,
     styles: {
@@ -28,16 +28,17 @@ const pricingPlans = [
   },
   {
     tier: 'Premium',
-    description: 'For high-volume drivers.',
+    description: 'Complete solution for total peace of mind.',
     price: '£7.99',
     priceSuffix: '/mo',
     features: [
-      { text: '5 Appeal Credits', highlight: 'per month' },
+      { text: 'Unlimited', highlight: 'Appeal Generations' },
       { text: 'Manage up to 5 Vehicles' },
-      { text: 'All Pay-as-you-go features' },
+      { text: 'PCN Image Scanning' },
+      { text: 'Advanced AI Analysis' },
       { text: 'Priority Support' },
     ],
-    buttonText: 'Upgrade Now',
+    buttonText: 'Start Premium',
     buttonLink: '/signup',
     isPopular: true,
     styles: {
@@ -47,34 +48,15 @@ const pricingPlans = [
     }
   },
   {
-    tier: 'Pay As You Go',
-    description: 'For the occasional driver.',
-    price: '£9.99',
-    priceSuffix: '/credit',
-    features: [
-      { text: 'All Freemium features' },
-      { text: 'Manage up to 2 Vehicles' },
-      { text: 'Unlock', highlight: 'PCN Image Scanning' },
-      { text: 'Discount on credit packs' },
-    ],
-    buttonText: 'Buy Credits',
-    buttonLink: '/signup',
-    isPopular: false,
-    styles: {
-        card: 'bg-sky-900/20 border-sky-700',
-        button: 'bg-sky-600 hover:bg-sky-500',
-        description: 'text-sky-300',
-    }
-  },
-  {
     tier: 'Fleet',
-    description: 'For businesses & professionals.',
+    description: 'Custom solution for businesses.',
     price: "Let's Talk",
     priceSuffix: '',
     features: [
       { text: 'Unlimited Vehicles' },
-      { text: 'Custom Credit Pools' },
-      { text: 'Advanced Fleet Dashboard' },
+      { text: 'Unlimited Appeals' },
+      { text: 'Multi-user Access' },
+      { text: 'Advanced Analytics' },
       { text: 'Dedicated Account Manager' },
     ],
     buttonText: 'Contact Sales',

@@ -102,20 +102,22 @@ serve(async (req) => {
     });
 
     // --- CREDIT DECREMENT LOGIC ---
-    // This happens after the stream starts, in the background.
-    const decrementCredits = async () => {
-        const { error } = await supabaseClient.rpc('decrement_credits', { user_id_in: user.id });
-        if (error) {
-            console.error('Error decrementing credits for user:', user.id, error);
-        } else {
-            console.log('Successfully decremented credits for user:', user.id);
-        }
-    };
-    
-    // We need a helper function in our DB to decrement safely
-    // Let's assume we will create a function `decrement_credits`
-    // that does `update subscriptions set credits = credits - 1 where id = user_id_in`
-    decrementCredits();
+    // Only decrement credits for freemium users, premium users have unlimited appeals
+    if (subscription.plan === 'freemium') {
+        const decrementCredits = async () => {
+            const { error } = await supabaseClient.rpc('decrement_credits', { user_id_in: user.id });
+            if (error) {
+                console.error('Error decrementing credits for user:', user.id, error);
+            } else {
+                console.log('Successfully decremented credits for freemium user:', user.id);
+            }
+        };
+        
+        // Decrement credits in the background for freemium users
+        decrementCredits();
+    } else {
+        console.log('Premium user - no credit decrement needed:', user.id);
+    }
 
     // Return the stream to the client
     return new Response(stream.toReadableStream(), {
