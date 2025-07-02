@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { PasswordInput } from "@/components/ui/password-input"
+import AuthBackground from "@/components/ui/auth-background"
 import { createClient } from "@/lib/supabase/client"
 
 // Define the form schema using Zod for validation
@@ -69,8 +70,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-background">
-      <Card className="mx-auto max-w-sm w-full">
+    <div className="flex items-center justify-center min-h-screen relative">
+      <AuthBackground />
+      <Card className="mx-auto max-w-sm w-full border border-amber-500/20 shadow-2xl shadow-amber-500/10">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
           <CardDescription>
